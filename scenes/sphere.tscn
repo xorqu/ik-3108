@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="SphereShape" id=58]
+radius = 0.887195
+
+[sub_resource type="VisualShaderNodeColorConstant" id=59]
+
+[sub_resource type="VisualShaderNodeInput" id=60]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeColorConstant" id=61]
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=63]
+output_port_for_preview = 0
+constant = 1.0
+
+[sub_resource type="VisualShader" id=64]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx, async_visible;
+
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Color:4
+	vec3 n_out4p0 = vec3(1.000000, 1.000000, 1.000000);
+	float n_out4p1 = 1.000000;
+
+// Output:0
+	EMISSION = n_out4p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -287, 184 )
+nodes/fragment/2/node = SubResource( 59 )
+nodes/fragment/2/position = Vector2( -80, 140 )
+nodes/fragment/3/node = SubResource( 60 )
+nodes/fragment/3/position = Vector2( -280, 480 )
+nodes/fragment/4/node = SubResource( 61 )
+nodes/fragment/4/position = Vector2( 60, 260 )
+nodes/fragment/6/node = SubResource( 63 )
+nodes/fragment/6/position = Vector2( -300, 260 )
+nodes/fragment/connections = PoolIntArray( 4, 0, 0, 5 )
+
+[sub_resource type="ShaderMaterial" id=65]
+shader = SubResource( 64 )
+
+[node name="sphere" type="RigidBody" groups=["sphere"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 58 )
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+use_collision = true
+radius = 0.4
+material = SubResource( 65 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.052783, 0 )
+light_energy = 0.35
+shadow_enabled = true
+omni_range = 30.0
+omni_attenuation = 2.54913

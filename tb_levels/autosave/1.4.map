@@ -1,0 +1,25 @@
+// Game: Qodot1
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_mod" "textures"
+"_tb_textures" "textures"
+// brush 0
+{
+( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) leaves 0 0 0 1 1
+( -64 -64 -16 ) ( -64 -64 -15 ) ( -63 -64 -16 ) leaves 0 0 0 1 1
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) leaves 0 0 0 1 1
+( 64 64 0 ) ( 64 65 0 ) ( 65 64 0 ) leaves 0 0 0 1 1
+( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) leaves 0 0 0 1 1
+( 64 64 16 ) ( 64 64 17 ) ( 64 65 16 ) leaves 0 0 0 1 1
+}
+}
+// entity 1
+{
+"classname" "func_group"
+"_tb_type" "_tb_layer"
+"_tb_name" "Unnamed"
+"_tb_id" "1"
+"_tb_layer_sort_index" "0"
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sphere.mp3-25bd1c93eec85b5e18e12ac7fb45a7f1.mp3str"
+
+[deps]
+
+source_file="res://sound/sphere.mp3"
+dest_files=[ "res://.import/sphere.mp3-25bd1c93eec85b5e18e12ac7fb45a7f1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

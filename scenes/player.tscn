@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sound/walk.mp3" type="AudioStream" id=1]
+[ext_resource path="res://scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://scenes/sphere.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sound/sphere.mp3" type="AudioStream" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.814626
+height = 1.48458
+
+[node name="player" type="KinematicBody" groups=["player"]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.55992, 0 )
+shape = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.66074, 0 )
+
+[node name="RayCast" type="RayCast" parent="Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -7 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539999, 2.79703, 1.00653 )
+visible = false
+light_energy = 5.875
+shadow_enabled = true
+omni_range = 15.4384
+
+[node name="walk_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="sphere" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.921, 1.574, -1.132 )
+visible = false
+
+[node name="sphere_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="sphere_sound"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="sphere_sound/Timer" to="." method="_on_Timer_timeout"]

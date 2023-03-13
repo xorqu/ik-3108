@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/1.8.map-c609fa61c91a3c150773913482b0d888.tres"
+
+[deps]
+
+source_file="res://tb_levels/autosave/1.8.map"
+dest_files=[ "res://.import/1.8.map-c609fa61c91a3c150773913482b0d888.tres" ]
+
+[params]
+

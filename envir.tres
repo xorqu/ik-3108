@@ -1,0 +1,11 @@
+[gd_resource type="Environment" format=2]
+
+[resource]
+background_mode = 1
+background_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+background_energy = 8.16
+ambient_light_color = Color( 0.184314, 0.184314, 0.184314, 1 )
+fog_enabled = true
+fog_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+fog_depth_begin = 1.0
+fog_depth_end = 20.0
